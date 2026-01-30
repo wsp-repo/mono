@@ -8,8 +8,8 @@
     "npm": ">=10.8.0"
   },
   "workspaces": [
-    "catalogs-service",
-    "spaces-service",
+    "service1",
+    "service2",
     "shared/*"
   ],
   "scripts": {
