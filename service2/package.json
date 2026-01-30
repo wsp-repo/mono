@@ -26,5 +26,8 @@
     "start:prod": "node dist/main",
     "scripts:dev": "cross-env NODE_ENV=develop npx ts-node -r tsconfig-paths/register",
     "type-check": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@dev/api-sdk": "workspace:*"
   }
 }
