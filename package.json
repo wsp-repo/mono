@@ -13,9 +13,10 @@
     "shared/*"
   ],
   "scripts": {
-    "build": "npm run build --workspaces --if-present",
-    "build:prod": "npm run build:prod --workspaces --if-present",
-    "build:public": "cd shared/public-package && npm run build",
+    "clean": "npm run clean --workspaces",
+    "build": "npm run build:api-sdk && npm run build:services",
+    "build:api-sdk": "npm run build --workspace=shared/api-sdk",
+    "build:services": "npm run build --workspace=service1 --workspace=service2",
     "type-check": "tsc --noEmit"
   },
   "dependencies": {
