@@ -28,6 +28,6 @@
     "type-check": "tsc --noEmit"
   },
   "dependencies": {
-    "@dev/api-sdk": "workspace:*"
+    "@dev/api-sdk": "file:../shared/api-sdk"
   }
 }
