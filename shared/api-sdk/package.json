@@ -17,7 +17,7 @@
     }
   },
   "scripts": {
-    "clean": "rimraf dist",
+    "clean": "rimraf ./dist ./tsconfig.build.tsbuildinfo",
     "build": "npm run clean && tsc -p tsconfig.build.json",
     "release:hash": "npm version prerelease --preid=$(git rev-parse --short HEAD)",
     "release:patch": "npm version patch",

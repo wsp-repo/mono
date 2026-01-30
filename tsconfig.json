@@ -1,0 +1,8 @@
+{
+  "files": [],
+  "references": [
+    { "path": "./shared/api-sdk" },
+    { "path": "./service1" },
+    { "path": "./service2" }
+  ]
+}

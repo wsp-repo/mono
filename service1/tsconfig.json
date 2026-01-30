@@ -38,6 +38,9 @@
     "useDefineForClassFields": false,
     "useUnknownInCatchVariables": false
   },
-  "include": ["./src"],
-  "exclude": ["./dist", "./reports"]
+  "include": ["src/**/*"],
+  "exclude": ["node_modules", "dist"],
+  "references": [
+    { "path": "../shared/api-sdk" }
+  ]
 }
