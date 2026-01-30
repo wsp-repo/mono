@@ -1,0 +1,29 @@
+{
+  "name": "@dev/service1",
+  "description": "Service 1",
+  "license": "UNLICENSED",
+  "version": "1.0.2",
+  "engines": {
+    "node": ">=20.19.0",
+    "npm": ">=10.8.0"
+  },
+  "files": [
+    "dist/**/*"
+  ],
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "prebuild": "rimraf dist",
+    "build": "npm run prebuild && nest build -p tsconfig.json",
+    "build:prod": "npm run prebuild && nest build -p tsconfig.prod.json",
+    "release:patch": "npm version patch",
+    "release:minor": "npm version minor",
+    "release:major": "npm version major",
+    "start": "nest start",
+    "start:dev": "cross-env NODE_ENV=develop LOG_LEVEL=info nest start --watch | pino-pretty",
+    "start:debug": "cross-env NODE_ENV=develop LOG_LEVEL=trace nest start --debug | pino-pretty --singleLine",
+    "start:prod": "node dist/main",
+    "scripts:dev": "cross-env NODE_ENV=develop npx ts-node -r tsconfig-paths/register",
+    "type-check": "tsc --noEmit"
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "name": "@dev/api-sdk",
+  "version": "1.0.0",
+  "description": "DEV API",
+  "license": "UNLICENSED",
+  "engines": {
+    "node": ">=20.19.0",
+    "npm": ">=10.8.0"
+  },
+  "files": [
+    "dist/**/*"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "scripts": {
+    "clean": "rimraf dist",
+    "build": "npm run clean && tsc -p tsconfig.build.json",
+    "release:hash": "npm version prerelease --preid=$(git rev-parse --short HEAD)",
+    "release:patch": "npm version patch",
+    "release:minor": "npm version minor",
+    "release:major": "npm version major",
+    "test": "jest --config ./jest.unit.js --passWithNoTests",
+    "test:verbose": "jest --config ./jest.unit.js --verbose --runInBand --colors",
+    "type-check": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@sinclair/typebox": "0.34.38",
+    "@sinclair/typemap": "0.10.1"
+  }
+}
