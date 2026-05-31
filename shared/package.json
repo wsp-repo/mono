@@ -1,0 +1,62 @@
+{
+  "name": "shared",
+  "version": "1.0.0",
+  "description": "My culture shared",
+  "license": "UNLICENSED",
+  "files": [
+    "dist/**/*"
+  ],
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    "./application": {
+      "types": "./dist/application/index.d.ts",
+      "default": "./dist/application/index.js"
+    },
+    "./common": {
+      "types": "./dist/common/index.d.ts",
+      "default": "./dist/common/index.js"
+    },
+    "./db/mongodb": {
+      "types": "./dist/db/mongodb/index.d.ts",
+      "default": "./dist/db/mongodb/index.js"
+    },
+    "./services": {
+      "types": "./dist/services/index.d.ts",
+      "default": "./dist/services/index.js"
+    },
+    "./services/service1": {
+      "types": "./dist/services/service1/index.d.ts",
+      "default": "./dist/services/service1/index.js"
+    },
+    "./typebox": {
+      "types": "./dist/typebox/index.d.ts",
+      "default": "./dist/typebox/index.js"
+    },
+    "./types": {
+      "types": "./dist/types/index.d.ts",
+      "default": "./dist/types/index.js"
+    }
+  },
+  "scripts": {
+    "- 1 -": "Форматирование и unit-тестирование",
+    "format": "prettier --write 'src/**/*.{js,ts,json,md}'",
+    "lint": "eslint ./src --quiet",
+    "lint:fix": "eslint ./src --fix",
+    "test:unit": "vitest run --passWithNoTests",
+    "- 2 -": "Сборка исполняемого кода",
+    "clean": "rimraf ./dist",
+    "build": "tsc -p tsconfig.json && tsc-alias -p tsconfig.json",
+    "build:prod": "npm run clean && tsc -p tsconfig.prod.json && tsc-alias -p tsconfig.prod.json",
+    "- 3 -": "Управление версиями",
+    "release:patch": "npm version patch",
+    "release:minor": "npm version minor",
+    "release:major": "npm version major"
+  },
+  "lint-staged": {
+    "*.{js,ts}": [
+      "prettier --write",
+      "eslint --max-warnings 0 --no-warn-ignored"
+    ]
+  }
+}

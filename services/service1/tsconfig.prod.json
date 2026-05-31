@@ -1,0 +1,12 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "composite": false,
+    "declaration": false,
+    "declarationMap": false,
+    "inlineSources": false,
+    "noEmitOnError": true,
+    "sourceMap": false
+  },
+  "exclude": ["**/*.spec.ts"]
+}

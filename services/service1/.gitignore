@@ -1,0 +1,11 @@
+/dist
+
+# compiled output
+package-lock.json
+
+# config YAML
+/config.yml
+/config.*.yml
+!/config.test.yml
+!/config.default.yml
+

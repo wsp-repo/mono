@@ -1,0 +1,40 @@
+{
+  "name": "@mono/service1-service",
+  "description": "Service1 service",
+  "license": "UNLICENSED",
+  "version": "1.0.0",
+  "files": [
+    "dist/**/*"
+  ],
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "- 1 -": "Форматирование и unit-тестирование",
+    "format": "prettier --write 'src/**/*.{js,ts,json,md}'",
+    "lint": "eslint ./src --quiet",
+    "lint:fix": "eslint ./src --fix",
+    "test:unit": "vitest run --passWithNoTests",
+    "- 2 -": "Сборка исполняемого кода",
+    "clean": "rimraf ./dist",
+    "build": "tsc -p tsconfig.json && tsc-alias -p tsconfig.json",
+    "build:prod": "npm run clean && tsc -b tsconfig.prod.json && tsc-alias -p tsconfig.prod.json",
+    "build:watch": "onchange -i -k 'src/**/*.{ts,json}' 'dist/.tsbuildinfo' -- npm run build",
+    "- 3 -": "Запуск на выполнение проекта",
+    "start": "npm run build && node dist/main",
+    "start:dev": "run-p build:watch start:dev:run",
+    "start:dev:run": "cross-env NODE_ENV=develop LOG_LEVEL=info nodemon dist/main | pino-pretty",
+    "start:debug": "npm run build && npm run start:debug:run",
+    "start:debug:run": "cross-env NODE_ENV=develop LOG_LEVEL=trace node --inspect dist/main | pino-pretty --singleLine",
+    "start:prod": "node dist/main",
+    "- 4 -": "Управление версиями",
+    "release:patch": "npm version patch",
+    "release:minor": "npm version minor",
+    "release:major": "npm version major"
+  },
+  "lint-staged": {
+    "*.{js,ts}": [
+      "prettier --write",
+      "eslint --max-warnings 0 --no-warn-ignored"
+    ]
+  }
+}

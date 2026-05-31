@@ -1,0 +1,21 @@
+# ключ конфигурации
+config: 'default'
+
+# настройки подключений к БД
+databases:
+  mongodb:
+    # подключение к БД
+    url: 'mongodb://localhost:27017/mono'
+    pool:
+      min: 5
+      max: 10
+
+# настройки приложения
+application:
+  name: 'service1-service'
+  rest:
+    host: '0.0.0.0'
+    port: 7001
+    path: ''
+  metrics:
+    route: 'metrics'
