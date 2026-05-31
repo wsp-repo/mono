@@ -1,12 +1,12 @@
+import { Post } from '@nestjs/common';
+import { ApiOperation, ApiTags } from '@nestjs/swagger';
 import {
   ApiController,
   ApiResponse,
   apiResponse,
   ApiSwagger,
   TypeboxBody,
-} from '@common/nest';
-import { Post } from '@nestjs/common';
-import { ApiOperation, ApiTags } from '@nestjs/swagger';
+} from '@zalib/nest';
 import { S2sUrls } from 'shared/common';
 import {
   FirstExampleCreateValuesBody,

@@ -1,10 +1,10 @@
+import { MiddlewareConsumer, Module, NestModule } from '@nestjs/common';
 import {
   addRequestId,
   getYamlString,
   HealthcheckModule,
   logRequests,
-} from '@common/nest';
-import { MiddlewareConsumer, Module, NestModule } from '@nestjs/common';
+} from '@zalib/nest';
 
 import { MetricsModule, MongodbModule } from './common/modules';
 import { FirstExampleModule } from './modules/firstExample/firstExample.module';

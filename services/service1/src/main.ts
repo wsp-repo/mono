@@ -1,15 +1,17 @@
+/*
 import {
   ErrorsFilter,
   getYamlString,
   loggerFactory,
   SuccessInterceptor,
-} from '@common/nest';
+} from '@zalib/nest';
+*/
 import { HttpAdapterHost, NestFactory, Reflector } from '@nestjs/core';
 import type { NestFastifyApplication } from '@nestjs/platform-fastify';
 import { FastifyAdapter } from '@nestjs/platform-fastify';
 import { parse as querystringParse } from 'qs';
-import { initSwagger } from 'shared/application';
-import { S2sUrls, UiUrls } from 'shared/common';
+//import { initSwagger } from 'shared/application';
+//import { S2sUrls, UiUrls } from 'shared/common';
 
 import { AppModule } from './app.module';
 import { MetricsInterceptor } from './common/modules';

@@ -1,5 +1,5 @@
-import { YamlNumber, YamlString } from '@common/nest';
 import { Injectable } from '@nestjs/common';
+import { YamlNumber, YamlString } from '@zalib/nest';
 
 @Injectable()
 export class AppConfig {

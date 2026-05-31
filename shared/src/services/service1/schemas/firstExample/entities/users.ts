@@ -1,5 +1,5 @@
-import { Type } from '@common/core/typebox';
-import type { Static } from '@sinclair/typebox';
+import { Type } from '@zalib/core/typebox';
+import type { Static } from '@zalib/core/typebox';
 
 import { userCoreProps } from 'src/common';
 

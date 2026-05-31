@@ -1,2 +1,1 @@
-export * from './errors';
-export * from './handleRequestError';
+export * from './s2sProxy';

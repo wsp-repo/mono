@@ -1,2 +1,1 @@
-export * from './extensions';
-export * from './mimes';
+export const SHARED_CONST = 1234567890;

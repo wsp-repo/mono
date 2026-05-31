@@ -1,8 +1,8 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 
-import { deepClone } from '@common/core';
 import type { NestFastifyApplication } from '@nestjs/platform-fastify';
 import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
+import { deepClone } from '@zalib/core';
 
 /**
  * Фильтрует только указанные по префиксу адреса

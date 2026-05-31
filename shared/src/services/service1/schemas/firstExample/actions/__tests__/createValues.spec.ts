@@ -1,24 +1,9 @@
-import { Value } from '@sinclair/typebox/value';
 import { describe, it, expect } from 'vitest';
 
 import type { FirstExampleCreateValuesBody } from '../createValues';
 import { firstExampleCreateValuesBodySchema } from '../createValues';
 
-/**
- * Хелпер валидации, нужно заменить на пакетный
- * ToDo проверить на предмет очистки от лишних полей
- */
-function validate(value: unknown): FirstExampleCreateValuesBody {
-  const result = Value.Check(firstExampleCreateValuesBodySchema, value);
-
-  if (!result) {
-    const errors = [...Value.Errors(firstExampleCreateValuesBodySchema, value)];
-
-    throw new Error(`Validation failed: ${JSON.stringify(errors)}`);
-  }
-
-  return value;
-}
+import { validate } from 'src/core/typebox'; // @zalib/core/typebox
 
 type ValidTest = {
   input: unknown;
@@ -75,10 +60,12 @@ const INVALID_TESTS: InvalidTest[] = [
 describe('firstExampleCreateValuesBodySchema', () => {
   it.each(VALID_TESTS)('$name', ({ input, result }) => {
     // проверка на подмножество, но это плохой путь
-    expect(validate(input)).toMatchObject(result);
+    expect(validate(firstExampleCreateValuesBodySchema, input)).toMatchObject(
+      result,
+    );
   });
 
   it.each(INVALID_TESTS)('$name', ({ input }) => {
-    expect(() => validate(input)).toThrow();
+    expect(() => validate(firstExampleCreateValuesBodySchema, input)).toThrow();
   });
 });

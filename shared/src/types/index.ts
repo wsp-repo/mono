@@ -1,3 +1,3 @@
-export type SharedCommon = {
-    id?: number;
-}
+export type SharedType = {
+  id?: number;
+};
