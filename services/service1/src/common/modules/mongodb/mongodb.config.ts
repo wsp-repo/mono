@@ -1,10 +1,10 @@
 import { Injectable } from '@nestjs/common';
-import { YamlCustom, YamlString } from '@zalib/nest';
 import {
   MongodbConnectionConfigPool,
   mongodbConnectionConfigPoolSchema,
   MongodbConnectionConfigProps,
 } from 'shared/db/mongodb';
+import { YamlCustom, YamlString } from 'shared/nestjs';
 
 @Injectable()
 export class MongodbConfig implements MongodbConnectionConfigProps {

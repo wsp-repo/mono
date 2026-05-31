@@ -1,9 +1,8 @@
+import { createValidator } from '@zalib/core/typebox';
 import { describe, it, expect } from 'vitest';
 
 import type { FirstExampleCreateValuesBody } from '../createValues';
 import { firstExampleCreateValuesBodySchema } from '../createValues';
-
-import { validate } from 'src/core/typebox'; // @zalib/core/typebox
 
 type ValidTest = {
   input: unknown;
@@ -34,6 +33,33 @@ const VALID_TESTS: ValidTest[] = [
       user: { extProp: 1, id: 123 },
     },
   },
+  {
+    name: 'Запись с лишними полями, юзер полный',
+    input: {
+      values: [
+        { description: 'Описание', name: 'Наименование', other: 'Лишнее поле' },
+      ],
+      user: { extProp: 1, id: 123 },
+    },
+    result: {
+      values: [{ description: 'Описание', name: 'Наименование' }],
+      user: { extProp: 1, id: 123 },
+    },
+  },
+  {
+    name: 'Лишнее свойство на всего объекта',
+    input: {
+      values: [
+        { description: 'Описание', name: 'Наименование', other: 'Лишнее поле' },
+      ],
+      user: { extProp: 1, id: 123 },
+      zzz: 1235,
+    },
+    result: {
+      values: [{ description: 'Описание', name: 'Наименование' }],
+      user: { extProp: 1, id: 123 },
+    },
+  },
 ];
 
 type InvalidTest = {
@@ -46,26 +72,17 @@ const INVALID_TESTS: InvalidTest[] = [
     name: 'Ошибка для undefined',
     input: undefined,
   },
-  {
-    name: 'Запись с лишними полями, юзер полный',
-    input: {
-      values: [
-        { description: 'Описание', name: 'Наименование', other: 'Лишнее поле' },
-      ],
-      user: { extProp: 1, id: 123 },
-    },
-  },
 ];
 
 describe('firstExampleCreateValuesBodySchema', () => {
+  const validator = createValidator(firstExampleCreateValuesBodySchema);
+
   it.each(VALID_TESTS)('$name', ({ input, result }) => {
     // проверка на подмножество, но это плохой путь
-    expect(validate(firstExampleCreateValuesBodySchema, input)).toMatchObject(
-      result,
-    );
+    expect(validator.compile(input)).toMatchObject(result);
   });
 
   it.each(INVALID_TESTS)('$name', ({ input }) => {
-    expect(() => validate(firstExampleCreateValuesBodySchema, input)).toThrow();
+    expect(() => validator.compile(input)).toThrow();
   });
 });

@@ -1,13 +1,13 @@
 import { Post } from '@nestjs/common';
 import { ApiOperation, ApiTags } from '@nestjs/swagger';
+import { S2sUrls } from 'shared/common';
 import {
   ApiController,
   ApiResponse,
   apiResponse,
   ApiSwagger,
   TypeboxBody,
-} from '@zalib/nest';
-import { S2sUrls } from 'shared/common';
+} from 'shared/nestjs';
 import {
   FirstExampleCreateValuesBody,
   firstExampleCreateValuesBodySchema,

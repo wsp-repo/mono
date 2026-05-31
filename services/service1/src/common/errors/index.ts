@@ -1,4 +1,4 @@
-import { HttpError } from '@zalib/nest';
+import { HttpError } from 'shared/nestjs';
 
 export class BadRequestError extends HttpError {
   public code = 'BAD_REQUEST';

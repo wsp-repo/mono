@@ -4,7 +4,7 @@ import {
   getYamlString,
   loggerFactory,
   SuccessInterceptor,
-} from '@zalib/nest';
+} from 'shared/nestjs';
 */
 import { HttpAdapterHost, NestFactory, Reflector } from '@nestjs/core';
 import type { NestFastifyApplication } from '@nestjs/platform-fastify';

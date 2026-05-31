@@ -19,7 +19,6 @@ export const firstExampleValueProps = {
 };
 
 export const firstExampleValueSchema = Type.Object(firstExampleValueProps, {
-  additionalProperties: false,
   description: 'Значение',
 });
 

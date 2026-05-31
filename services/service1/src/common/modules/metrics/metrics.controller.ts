@@ -3,7 +3,7 @@
 import { Controller, Get, Res } from '@nestjs/common';
 import { ApiExcludeController } from '@nestjs/swagger';
 import { PrometheusController } from '@willsoto/nestjs-prometheus';
-import { getYamlString, Response } from '@zalib/nest';
+import { getYamlString, Response } from 'shared/nestjs';
 
 @ApiExcludeController()
 @Controller(getYamlString('application.metrics.route'))

@@ -4,7 +4,7 @@ import {
   getYamlString,
   HealthcheckModule,
   logRequests,
-} from '@zalib/nest';
+} from 'shared/nestjs';
 
 import { MetricsModule, MongodbModule } from './common/modules';
 import { FirstExampleModule } from './modules/firstExample/firstExample.module';

@@ -1,13 +1,13 @@
 import { Get } from '@nestjs/common';
 import { ApiOperation, ApiTags } from '@nestjs/swagger';
+import { UiUrls } from 'shared/common';
 import {
   ApiController,
   ApiResponse,
   apiResponse,
   ApiSwagger,
   TypeboxQueries,
-} from '@zalib/nest';
-import { UiUrls } from 'shared/common';
+} from 'shared/nestjs';
 import {
   FirstExampleGetValuesQueries,
   firstExampleGetValuesQueriesSchema,
