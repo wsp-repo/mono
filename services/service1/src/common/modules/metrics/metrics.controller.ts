@@ -3,6 +3,7 @@
 import { Controller, Get, Res } from '@nestjs/common';
 import { ApiExcludeController } from '@nestjs/swagger';
 import { PrometheusController } from '@willsoto/nestjs-prometheus';
+
 import { getYamlString, Response } from 'shared/nestjs';
 
 @ApiExcludeController()

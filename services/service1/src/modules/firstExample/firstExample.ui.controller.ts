@@ -1,5 +1,6 @@
 import { Get } from '@nestjs/common';
 import { ApiOperation, ApiTags } from '@nestjs/swagger';
+
 import { UiUrls } from 'shared/common';
 import {
   ApiController,

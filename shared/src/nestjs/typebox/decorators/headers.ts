@@ -1,9 +1,8 @@
 /* eslint-disable @typescript-eslint/naming-convention */
 
-import type { ExecutionContext } from '@nestjs/common';
-import { createParamDecorator } from '@nestjs/common';
+import { ExecutionContext, createParamDecorator } from '@nestjs/common';
 import { camelCase } from '@zalib/core/helpers';
-import type { TSchema, TypeboxOptions } from '@zalib/core/typebox';
+import { TSchema, TypeboxOptions } from '@zalib/core/typebox';
 
 import { addConvert } from '../helpers';
 import { TypeboxValidatorPipe } from '../pipes/validator';

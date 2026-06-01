@@ -1,5 +1,6 @@
 import { Inject, Injectable } from '@nestjs/common';
 import { Db } from 'mongodb';
+
 import { MongoQueriesParent } from 'shared/db/mongodb';
 
 export const MONGODB_INJECT_NAME = 'MONGODB_INJECT_NAME';

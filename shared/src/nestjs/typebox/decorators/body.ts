@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/naming-convention */
 
 import { Body } from '@nestjs/common';
-import type { TSchema, TypeboxOptions } from '@zalib/core/typebox';
+import { TSchema, TypeboxOptions } from '@zalib/core/typebox';
 
 import { createValidatorPipe } from '../pipes/validator';
 

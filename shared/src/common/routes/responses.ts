@@ -1,11 +1,11 @@
-import type {
+import {
   TAny,
   TLiteral,
   TObject,
   TSchema,
   TString,
+  Type,
 } from '@zalib/core/typebox';
-import { Type } from '@zalib/core/typebox';
 
 export function createSuccessResponseSchema(): TObject<{
   success: TLiteral<true>;

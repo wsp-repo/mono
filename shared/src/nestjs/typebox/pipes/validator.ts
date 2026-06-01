@@ -1,11 +1,11 @@
-import type { PipeTransform } from '@nestjs/common';
-import type {
+import { PipeTransform } from '@nestjs/common';
+import {
   TSchema,
   Static,
   TypeboxOptions,
   TypeboxValidator,
+  createValidator,
 } from '@zalib/core/typebox';
-import { createValidator } from '@zalib/core/typebox';
 
 /**
  * Валидация данных по схеме typebox

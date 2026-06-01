@@ -1,4 +1,5 @@
 import { Global, Module } from '@nestjs/common';
+
 import { getClientProvider } from 'shared/db/mongodb';
 
 import { MetricsModule } from '../metrics/metrics.module';

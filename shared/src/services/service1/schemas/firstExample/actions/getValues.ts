@@ -1,5 +1,4 @@
-import { Type } from '@zalib/core/typebox';
-import type { Static } from '@zalib/core/typebox';
+import { Type, Static } from '@zalib/core/typebox';
 
 import { createSuccessResponseSchema } from 'src/common';
 

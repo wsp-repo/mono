@@ -7,8 +7,10 @@ import {
 } from 'shared/nestjs';
 */
 import { HttpAdapterHost, NestFactory, Reflector } from '@nestjs/core';
-import type { NestFastifyApplication } from '@nestjs/platform-fastify';
-import { FastifyAdapter } from '@nestjs/platform-fastify';
+import {
+  NestFastifyApplication,
+  FastifyAdapter,
+} from '@nestjs/platform-fastify';
 import { parse as querystringParse } from 'qs';
 //import { initSwagger } from 'shared/application';
 //import { S2sUrls, UiUrls } from 'shared/common';

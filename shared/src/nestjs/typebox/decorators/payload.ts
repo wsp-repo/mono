@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/naming-convention */
 
 import { Payload } from '@nestjs/microservices';
-import type { TSchema, TypeboxOptions } from '@zalib/core/typebox';
+import { TSchema, TypeboxOptions } from '@zalib/core/typebox';
 
 import { createValidatorPipe } from '../pipes/validator';
 

@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/naming-convention */
 
 import { MessageBody } from '@nestjs/websockets';
-import type { TSchema, TypeboxOptions } from '@zalib/core/typebox';
+import { TSchema, TypeboxOptions } from '@zalib/core/typebox';
 
 import { createValidatorPipe } from '../pipes/validator';
 

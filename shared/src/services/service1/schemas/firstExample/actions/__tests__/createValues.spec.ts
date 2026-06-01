@@ -1,8 +1,10 @@
 import { createValidator } from '@zalib/core/typebox';
 import { describe, it, expect } from 'vitest';
 
-import type { FirstExampleCreateValuesBody } from '../createValues';
-import { firstExampleCreateValuesBodySchema } from '../createValues';
+import {
+  FirstExampleCreateValuesBody,
+  firstExampleCreateValuesBodySchema,
+} from '../createValues';
 
 type ValidTest = {
   input: unknown;

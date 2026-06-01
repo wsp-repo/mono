@@ -1,4 +1,4 @@
-import type { TypeboxOptions } from '@zalib/core/typebox';
+import { TypeboxOptions } from '@zalib/core/typebox';
 
 /**
  * Хелпер для добавления опции конвертации
