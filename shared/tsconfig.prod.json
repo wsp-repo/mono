@@ -1,0 +1,9 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "inlineSources": false,
+    "noEmitOnError": true,
+    "sourceMap": false
+  },
+  "exclude": ["**/*.spec.ts"]
+}

@@ -1,0 +1,9 @@
+/dist
+
+# compiled output
+package-lock.json
+
+# Tests
+/coverage
+/reports
+/junit.*
