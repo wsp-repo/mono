@@ -5,7 +5,7 @@ import { camelCase } from '@zalib/core/helpers';
 import { TSchema, TypeboxOptions } from '@zalib/core/typebox';
 
 import { addConvert } from '../helpers';
-import { TypeboxValidatorPipe } from '../pipes/validator';
+import { createValidatorPipe } from '../pipes/validator';
 
 function getHeaders(ctx: ExecutionContext): Record<string, unknown> {
   const { headers } = ctx.switchToHttp().getRequest();
@@ -31,7 +31,7 @@ export function TypeboxHeader<Schema extends TSchema>(
   options?: TypeboxOptions,
 ): ParameterDecorator {
   return createParamDecorator((_: undefined, ctx: ExecutionContext) => {
-    return new TypeboxValidatorPipe(schema, addConvert(options)).transform(
+    return createValidatorPipe(schema, addConvert(options)).transform(
       getHeaders(ctx)[header],
     );
   })();
@@ -43,7 +43,7 @@ export function TypeboxHeaders<Schema extends TSchema>(
   options?: TypeboxOptions,
 ): ParameterDecorator {
   return createParamDecorator((_: undefined, ctx: ExecutionContext) => {
-    return new TypeboxValidatorPipe(schema, addConvert(options)).transform(
+    return createValidatorPipe(schema, addConvert(options)).transform(
       getHeaders(ctx),
     );
   })();
